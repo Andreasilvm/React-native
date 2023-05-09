@@ -1,112 +1,110 @@
-import React from 'react';
-import type {PropsWithChildren} from 'react';
+/*import { useState } from 'react';
+//import {useState} from 'react';
+
 import {
   SafeAreaView,
-  ScrollView,
+  ScrollView, 
   StatusBar,
   StyleSheet,
-  Text,
+  Text, 
   useColorScheme,
   View,
 } from 'react-native';
 
+const[modalVisible,setModalVisible]=useState(false); // asi se declara un humm 
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+const App = () => {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
+    <SafeAreaView style={styles.contenedor}>
+      <Text style={styles.titulo}>
+      Administracion de citas{''} 
+      <Text style={styles.tituloBold}>Veeterinaria</Text>
       </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
 
-function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+       <Pressable style = {styles.btnNuevaCita}>
+         onpress={()=>setModaVisible(true)}
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Registrate">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="Conocenos">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Tipos de baile">
-            <DebugInstructions />
-          </Section>
-          <Section title="mas informacion">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
+       <Text style = {styles.btnTextoNuevaCiata}>Nueva cita</Text>
+       </Pressable>
     </SafeAreaView>
   );
 }
+//------------
+ //const nuevaCitaHandler = () => {
+  //console.log('Presionastes el boton');
+  
+  }
+
+const styles= StyleSheet.create({
+   titulo:{
+    textAlign:"center",
+    fontSize:20,
+    fontWeight:'900',
+    color:'280E09',
+
+   },
+   tituloBold:{
+    textAlign:"center",
+    fontSize:20,
+    fontWeight:'600',
+    color:'#148305',
+   },
+   btnNuevaCita:{
+    backgroudColor:'#6D29D9',
+    Padding:15,
+    marginTop:30,
+    marginHorizontal:20,
+    borderRadius:10
+   },
+   btnTextoNuevaCita:{}
+   contenedor:{
+
+   }
+
+});
+
+*/
+import React from 'react';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
+  message: {
+    textAlign: 'center',
     fontSize: 18,
-    fontWeight: '400',
+    marginBottom: 10,
   },
-  highlight: {
-    fontWeight: '700',
+  button: {
+    backgroundColor: '#2196F3',
+    borderRadius: 5,
+    padding: 10,
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
 });
 
-export default App;
+const HomeScreen = ({ navigation }) => {
+  const goToNextPage = () => {
+    navigation.navigate('NextScreen');
+  };
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.message}>¡Academia de Baile A.S!</Text>
+      <TouchableOpacity style={styles.button} onPress={goToNextPage}>
+        <Text style={styles.buttonText}>Conocesnos con un click </Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+export default HomeScreen;
+
