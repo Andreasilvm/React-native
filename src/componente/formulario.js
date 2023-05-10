@@ -1,37 +1,51 @@
-import React from "react";
-import { Modal, SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native/types";
+import React, { useState } from "react";
+import { Modal, SafeAreaView, ScrollView, StyleSheet, Text, TextInput } from "react-native/types";
 
-const Formulario = (ModalVisible) => {
+const Formulario = ({ ModalVisible }) => {
+
+    const [paciente, setPaciente] = useState('')
     return (
         <Modal>
             animationType= 'slide'
             visible = {ModalVisible}
+
             <SafeAreaView>
                 <ScrollView>
                     <Text>Nueva Cita</Text>
                     <View>
-                        <Text style={StyleSheet.label}>Nombre</Text>
-                        <TextImput style={Styles.imput}></TextImput> // preguntar por el imp
+                        <Text style={StyleSheet.label}>
+
+                            Nombre por paciente </Text>
+
+                        <TextImput
+                            styles={Styles.imput}
+                            placeholder='Nombre del paciente'
+                            placeholderTextColor={'#666'}
+                            value={paciente}
+                            onChangeText={setPaciente}
+                            multilinea={true}>
+                        </TextImput>
                     </View>
                 </ScrollView>
             </SafeAreaView>
-        </Modal>// ventana
+        </Modal >// ventana
     )
 }
 const styles = StyleSheet.create({
-    label{
-    color: '#FFF',
-    marginBotton: 10,
-    marginTop: 20,
-    fontweight: '500'
+
+ label:{
+     color:'#FFF',
+     marginBottom:'10',
+     marginTop:'15',
+     fontFont:'20',
+     fontWeight:'500'
 },
-
-    input: {
-    backgroundColor: '#FFF',
-    pedding: 15,
-
-
+imput:{
+    backgroundColor:'#FFF',
+    padding:'15',
+    borderRadius:'10'
 }
-)
 
-export default Formulario
+});
+
+export default Formulario;

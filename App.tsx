@@ -1,70 +1,81 @@
-/*import { useState } from 'react';
-//import {useState} from 'react';
+import React, {useState} from 'react';
 
 import {
+  Pressable,
   SafeAreaView,
-  ScrollView, 
+  ScrollView,
   StatusBar,
   StyleSheet,
-  Text, 
+  Text,
   useColorScheme,
   View,
 } from 'react-native';
 
-const[modalVisible,setModalVisible]=useState(false); // asi se declara un humm 
+import Formulario from './src/componente/formulario';
+const[modalVisible, setModalVisible] = useState(false);
 
-const App = () => {
+import {
+  Colors,
+  DebugInstructions,
+  Header,
+  LearnMoreLinks,
+  ReloadInstructions,
+} from 'react-native/Libraries/NewAppScreen';
+
+
+const App = () =>{
   return (
-    <SafeAreaView style={styles.contenedor}>
+    <SafeAreaView>
       <Text style={styles.titulo}>
-      Administracion de citas{''} 
-      <Text style={styles.tituloBold}>Veeterinaria</Text>
+        Administración de citas {''}
+      <Text style={styles.tituloBold}>Veterinaria </Text>
       </Text>
+      
+      <Pressable style={styles.btnNuevaCita} 
+          onPress={()=>setModalVisible(true)}>
+        <Text style={styles.btnTextoNuevaCita}>Nueva cita</Text>
+      </Pressable>
 
-       <Pressable style = {styles.btnNuevaCita}>
-         onpress={()=>setModaVisible(true)}
+      <Formulario  
+      ModalVisible={modalVisible} 
+      />
 
-       <Text style = {styles.btnTextoNuevaCiata}>Nueva cita</Text>
-       </Pressable>
     </SafeAreaView>
-  );
+);
 }
-//------------
- //const nuevaCitaHandler = () => {
-  //console.log('Presionastes el boton');
-  
+const styles = StyleSheet.create({
+  titulo:{
+  textAlign: 'center',
+  fontSize: 20,
+  fontWeight: '900',
+  color: '#280E09',
+  },
+  tituloBold: {
+    textAlign: 'center',
+    fontSize: 20,
+    fontWeight: '600',
+    color: '#148305',
+  },
+  btnNuevaCita:{
+    backgroundColor: '#6D28D9',
+    padding: 15,
+    marginTop: 30,
+    marginHorizontal: 20,
+    borderRadius: 1
+  },
+  btnTextoNuevaCita: {
+    textAlign: 'center',
+    color: "#FFF",
+    fontSize: 20,
+    fontWeight: '900',
+    textTransform: 'uppercase'
   }
+}
+);
 
-const styles= StyleSheet.create({
-   titulo:{
-    textAlign:"center",
-    fontSize:20,
-    fontWeight:'900',
-    color:'280E09',
+export default App;
 
-   },
-   tituloBold:{
-    textAlign:"center",
-    fontSize:20,
-    fontWeight:'600',
-    color:'#148305',
-   },
-   btnNuevaCita:{
-    backgroudColor:'#6D29D9',
-    Padding:15,
-    marginTop:30,
-    marginHorizontal:20,
-    borderRadius:10
-   },
-   btnTextoNuevaCita:{}
-   contenedor:{
-
-   }
-
-});
-
-*/
-import React from 'react';
+/*import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -107,4 +118,4 @@ const HomeScreen = ({ navigation }) => {
 };
 
 export default HomeScreen;
-
+*/
