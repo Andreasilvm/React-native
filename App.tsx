@@ -1,54 +1,46 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
-import {
-  Pressable,
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import { Pressable, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, useColorScheme, View, } from 'react-native';
 
-import Formulario from './src/componente/formulario';
-const[modalVisible, setModalVisible] = useState(false);
-
-import {
+import Formulario from './src/componente/Formulario';
+const [modalVisible, setModalVisible] = useState(false);
+/*import {
   Colors,
   DebugInstructions,
   Header,
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+*/
 
-
-const App = () =>{
+const App = () => {
   return (
     <SafeAreaView>
       <Text style={styles.titulo}>
         Administración de citas {''}
-      <Text style={styles.tituloBold}>Veterinaria </Text>
+        <Text style={styles.tituloBold}>Veterinaria </Text>// estilos de boton
       </Text>
-      
-      <Pressable style={styles.btnNuevaCita} 
-          onPress={()=>setModalVisible(true)}>
+
+      <Pressable style={styles.btnNuevaCita}
+        onPress={() => setModalVisible(true)}>// al dar click nos lleva aun modal
+
         <Text style={styles.btnTextoNuevaCita}>Nueva cita</Text>
       </Pressable>
 
-      <Formulario  
-      ModalVisible={modalVisible} 
+      <Formulario
+        modalVisible ={modalVisible}// parametro se llama talcual 
+        setModalVisible ={setModalVisible}// parametro se llama talcual 
       />
 
     </SafeAreaView>
-);
+  );
 }
 const styles = StyleSheet.create({
-  titulo:{
-  textAlign: 'center',
-  fontSize: 20,
-  fontWeight: '900',
-  color: '#280E09',
+  titulo: {
+    textAlign: 'center',
+    fontSize: 20,
+    fontWeight: '900',
+    color: '#280E09',
   },
   tituloBold: {
     textAlign: 'center',
@@ -56,8 +48,8 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: '#148305',
   },
-  btnNuevaCita:{
-    backgroundColor: '#6D28D9',
+  btnNuevaCita: {
+    backgroundColor: "#6D28D9",
     padding: 15,
     marginTop: 30,
     marginHorizontal: 20,
