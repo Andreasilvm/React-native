@@ -1,46 +1,56 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
-import { Pressable, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, useColorScheme, View, } from 'react-native';
+import {
+  Pressable,
+  SafeAreaView,
+  ScrollView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  useColorScheme,
+  View,
+} from 'react-native';
 
 import Formulario from './src/componente/Formulario';
-const [modalVisible, setModalVisible] = useState(false);
-/*import {
+
+import {
   Colors,
   DebugInstructions,
   Header,
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-*/
 
-const App = () => {
+const App = () =>{
+  const[modalVisible, setModalVisible] = useState(false);
   return (
     <SafeAreaView>
       <Text style={styles.titulo}>
         Administración de citas {''}
-        <Text style={styles.tituloBold}>Veterinaria </Text>// estilos de boton
+      <Text style={styles.tituloBold}>Veterinaria </Text>
       </Text>
-
-      <Pressable style={styles.btnNuevaCita}
-        onPress={() => setModalVisible(true)}>// al dar click nos lleva aun modal
-
+      
+      <Pressable style={styles.btnNuevaCita} 
+          onPress={()=>setModalVisible(true)}>
         <Text style={styles.btnTextoNuevaCita}>Nueva cita</Text>
       </Pressable>
 
-      <Formulario
-        modalVisible ={modalVisible}// parametro se llama talcual 
-        setModalVisible ={setModalVisible}// parametro se llama talcual 
+      <Formulario  
+      modalVisible={modalVisible}
+      setModalVisible = {setModalVisible} 
+
       />
 
     </SafeAreaView>
-  );
+);
 }
+
 const styles = StyleSheet.create({
-  titulo: {
-    textAlign: 'center',
-    fontSize: 20,
-    fontWeight: '900',
-    color: '#280E09',
+  titulo:{
+  textAlign: 'center',
+  fontSize: 20,
+  fontWeight: '900',
+  color: '#00000',
   },
   tituloBold: {
     textAlign: 'center',
@@ -48,13 +58,14 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: '#148305',
   },
-  btnNuevaCita: {
-    backgroundColor: "#6D28D9",
+  btnNuevaCita:{
+    backgroundColor: '#6D28D9',
     padding: 15,
     marginTop: 30,
     marginHorizontal: 20,
     borderRadius: 1
   },
+
   btnTextoNuevaCita: {
     textAlign: 'center',
     color: "#FFF",
@@ -62,8 +73,8 @@ const styles = StyleSheet.create({
     fontWeight: '900',
     textTransform: 'uppercase'
   }
-}
-);
+});
+
 
 export default App;
 
