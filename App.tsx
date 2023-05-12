@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
   textAlign: 'center',
   fontSize: 20,
   fontWeight: '900',
-  color: '#00000',
+  color: '#000000',
   },
   tituloBold: {
     textAlign: 'center',
