@@ -50,7 +50,7 @@ const App = () => {
         />
       )}
       <Formulario
-        modalVisible={modalVisible}
+        modalVisible={modalVisible} 
         setModalVisible={setModalVisible}
         pacientes={pacientes}
         setPacientes={setPacientes}
@@ -73,19 +73,19 @@ const styles = StyleSheet.create({
     backgroundColor: '#101B68', // se cambia el fondo de la primera vista
   },
 
-  titulo: {
+  titulo: { // titulo principal
     textAlign: 'center',
     fontSize: 30,
     fontWeight: '900',
     color: '#fff',
   },
-  tituloBold: {
+  tituloBold: { // titulo 2do
     textAlign: 'center',
     fontSize: 30,
     fontWeight: '600',
     color: '#1483D5',
   },
-  btnNuevaCita: {
+  btnNuevaCita: { // boton
     backgroundColor: '#73B6EE',
     padding: 15,
     marginTop: 30,

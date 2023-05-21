@@ -4,9 +4,9 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 const Paciente = ({ item, onDelete, onEdit }) => {
     return (
         <View style={styles.container}>
-            
+
             <View style={styles.paciente}>
-           
+
                 <View>
                     <Text style={styles.label}>Paciente:</Text>
                     <Text style={styles.valor}>{item.paciente}</Text>
@@ -34,13 +34,13 @@ const Paciente = ({ item, onDelete, onEdit }) => {
                     <TouchableOpacity style={styles.btnEliminar} onPress={() => onDelete(item.id)}>
                         <Text style={styles.btnTexto}>ELIMINAR</Text>
 
-                        
+
                     </TouchableOpacity>
                 </View>
             </View>
         </View>
 
-        
+
     );
 };
 
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
         padding: 3,
         marginBottom: 3,
     },
-      label: {
+    label: {
         fontWeight: 'bold',
         marginBottom: 0,
     },
